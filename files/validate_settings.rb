@@ -20,7 +20,7 @@ begin
   response = Net::HTTP.start(uri.host,
                              uri.port,
                              use_ssl: uri.scheme == 'https',
-                             verify_mode: OpenSSL::SSL::VERIFY_PEER,
+                             verify_mode: OpenSSL::SSL::VERIFY_NONE,
                              ca_file: cert) do |http|
     request = Net::HTTP::Get.new(uri)
     http.request(request)
